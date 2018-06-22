@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "reactive-dotnet", "reactive-dotnet\reactive-dotnet.csproj", "{FD0B8CD6-75FC-42F6-AFCF-68F0B6901189}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD0B8CD6-75FC-42F6-AFCF-68F0B6901189}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD0B8CD6-75FC-42F6-AFCF-68F0B6901189}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD0B8CD6-75FC-42F6-AFCF-68F0B6901189}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD0B8CD6-75FC-42F6-AFCF-68F0B6901189}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
