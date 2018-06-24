@@ -18,48 +18,27 @@ import java.util.List;
 
 @SpringBootApplication
 @RestController
-public class SpringWebclientBasicsApplication implements CommandLineRunner {
+public class SpringWebclientBasicsApplication  {
 
     public static void main(String[] args) {
         SpringApplication.run(SpringWebclientBasicsApplication.class, args);
     }
 
-    @GetMapping("/")
-    public Mono<ServerResponse> get() {
-        return ServerResponse.ok().body(WebClient.create()
+    @GetMapping(value = "/", produces = "text/plain")
+
+    public Flux<String> get() {
+        return WebClient.create()
                 .get()
                 .uri("https://reqres.in/api/users?page=2")
                 .retrieve()
                 .bodyToFlux(String.class)
-                .flatMap(s -> Flux.fromIterable((List<String>)JsonPath.parse(s).read("$.data[*].first_name")))
+                .flatMap(s -> Flux.fromIterable((List<String>) JsonPath.parse(s).read("$.data[*].first_name")))
                 .flatMap(s -> WebClient.create()
                         .get()
                         .uri("https://devops.datenkollektiv.de/renderBannerTxt?font=soft&text=" + s)
                         .retrieve()
                         .bodyToMono(String.class)
-                ), String.class);
+                );
 
     }
-    //access command line arguments
-    @Override
-    public void run(String... args) throws Exception {
-
-
-        WebClient.create()
-                .get()
-                .uri("https://reqres.in/api/users?page=2")
-                .retrieve()
-                .bodyToFlux(String.class)
-                .flatMap(s -> Flux.fromIterable((List<String>)JsonPath.parse(s).read("$.data[*].first_name")))
-                .flatMap(s -> WebClient.create()
-                        .get()
-                        .uri("https://devops.datenkollektiv.de/renderBannerTxt?font=soft&text=" + s)
-                        .retrieve()
-                        .bodyToMono(String.class))
-                .doOnNext(s -> System.out.println(s))
-                .blockLast();
-
-    }
-
-
 }
