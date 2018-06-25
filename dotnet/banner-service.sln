@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "reactive-dotnet", "reactive-dotnet\reactive-dotnet.csproj", "{FD0B8CD6-75FC-42F6-AFCF-68F0B6901189}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "reactive-dotnet", "banner-service\banner-service.csproj", "{FD0B8CD6-75FC-42F6-AFCF-68F0B6901189}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
