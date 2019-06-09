@@ -25,7 +25,6 @@ public class SpringWebclientBasicsApplication  {
     }
 
     @GetMapping(value = "/", produces = "text/plain")
-
     public Flux<String> get() {
         return WebClient.create()
                 .get()
