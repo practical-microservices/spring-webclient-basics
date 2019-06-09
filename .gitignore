@@ -15,6 +15,7 @@
 **/.idea/**/*.iml
 **/.idea/**/contentModel.xml
 **/.idea/**/modules.xml
+.idea/**
 *.iws
 *.iml
 *.ipr
